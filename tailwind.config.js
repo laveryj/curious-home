@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       inter: ['Inter', 'sans-serif'],
+      // openSans: ['Open Sans', 'sans-serif'],
     },
     container: {
       center: true,
@@ -14,7 +15,7 @@ module.exports = {
       transparent: 'transparent',
       white: '#FFFFFF',
       black: '#181C31',
-      primary: '#7083F5',
+      primary: '#B95C24',
       secondary: '',
       stroke: '#EBEFF4',
       dark: '#1F233A',
@@ -40,8 +41,12 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'gradient-1': 'linear-gradient(55.15deg, #8EA5FE -7.09%, #BEB3FD 51.72%, #90D1FF 101.48%)',
-        'gradient-2': 'linear-gradient(120.12deg, #FF8FE8 0%, #FFC960 100%)',
+        // 'gradient-1': 'linear-gradient(55.15deg, #8EA5FE -7.09%, #BEB3FD 51.72%, #90D1FF 101.48%)',
+        // 'gradient-2': 'linear-gradient(120.12deg, #FF8FE8 0%, #FFC960 100%)',
+
+'gradient-1': 'linear-gradient(55.15deg, #9E4A1E -7.09%, #B95C24 51.72%, #D98E4A 101.48%)',
+'gradient-2': 'linear-gradient(120.12deg, #B95C24 0%, #E07930 100%)',
+        
         'gradient-3': 'linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%)',
         texture: "url('../images/graphics/texture.svg')",
       },
