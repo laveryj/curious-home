@@ -10,7 +10,7 @@
     <!-- ======= Header Start ======= -->
     <header
       class="navbar absolute top-0 left-0 z-50 w-full border-stroke bg-white duration-300 dark:border-stroke-dark dark:bg-black"
-    >
+     >
       <div class="container relative max-w-[1400px]">
         <div class="flex items-center justify-between">
           <div class="block py-4 lg:py-0">
@@ -19,12 +19,12 @@
               class="block max-w-[145px] sm:max-w-[180px]"
             >
               <img
-                src="images/logo.svg"
+                src="images/logo.png"
                 alt="logo"
                 class="block dark:hidden"
               />
               <img
-                src="images/logo-white.svg"
+                src="images/logo.png"
                 alt="logo"
                 class="hidden dark:block"
               />
@@ -32,6 +32,8 @@
           </div>
           <button
             class="navbarOpen absolute right-4 top-1/2 z-50 flex h-10 w-10 -translate-y-1/2 flex-col items-center justify-center space-y-[6px] font-bold lg:hidden"
+            aria-label="navbarOpen"
+            name="navbarOpen"
           >
             <span
               class="block h-[2px] w-7 bg-black dark:bg-white"
@@ -49,6 +51,8 @@
           >
             <button
               class="navbarClose fixed top-10 right-10 z-[9999] flex h-10 w-10 flex-col items-center justify-center font-bold lg:hidden"
+              name="navbarClose"
+              aria-label="navbarClose"
             >
               <span
                 class="block h-[2px] w-7 rotate-45 bg-black dark:bg-white"
@@ -64,9 +68,17 @@
               <ul
                 class="items-center space-y-3 lg:flex lg:space-x-8 lg:space-y-0 xl:space-x-10"
               >
-                <li class="menu-item">
+              <li class="menu-item">
+                <a
+                  href="#about"
+                  class="menu-scroll inline-flex items-center text-base font-medium text-black hover:text-primary dark:text-white dark:hover:text-primary lg:py-7"
+                >
+                  About
+                </a>
+              </li>
+              <li class="menu-item">
                   <a
-                    href="/#features"
+                    href="#features"
                     class="menu-scroll inline-flex items-center text-base font-medium text-black hover:text-primary dark:text-white dark:hover:text-primary lg:py-7"
                   >
                     Features
@@ -74,29 +86,29 @@
                 </li>
                 <li class="menu-item">
                   <a
-                    href="/#about"
+                    href="#work-process"
                     class="menu-scroll inline-flex items-center text-base font-medium text-black hover:text-primary dark:text-white dark:hover:text-primary lg:py-7"
                   >
-                    About
+                    How It Works
                   </a>
                 </li>
                 <li class="menu-item">
                   <a
-                    href="/#work-process"
+                    href="#pricing"
                     class="menu-scroll inline-flex items-center text-base font-medium text-black hover:text-primary dark:text-white dark:hover:text-primary lg:py-7"
                   >
-                    How It Work
+                    Pricing
                   </a>
-                </li>
+                </li>               
                 <li class="menu-item">
                   <a
-                    href="/#support"
+                    href="#support"
                     class="menu-scroll inline-flex items-center text-base font-medium text-black hover:text-primary dark:text-white dark:hover:text-primary lg:py-7"
                   >
-                    Support
+                    Contact
                   </a>
                 </li>
-                <li class="submenu-item menu-item group relative">
+                <!-- <li class="submenu-item menu-item group relative">
                   <a
                     href="javascript:void(0)"
                     class="submenu-taggler inline-flex items-center text-base font-medium text-black hover:text-primary group-hover:text-primary dark:text-white dark:hover:text-primary lg:py-7"
@@ -161,15 +173,15 @@
                       </a>
                     </li>
                   </ul>
-                </li>
+                </li> -->
               </ul>
             </nav>
           </div>
 
-          <div
+            <div
             class="mr-[60px] flex items-center justify-end lg:mr-0"
-          >
-            <label
+            >
+            <!-- <label
               for="themeSwitcher"
               class="inline-flex cursor-pointer items-center"
               aria-label="themeSwitcher"
@@ -228,7 +240,7 @@
                   </defs>
                 </svg>
               </span>
-            </label>
+            </label> -->
             <a
               href="signin.html"
               class="hidden py-[10px] px-6 text-base font-medium text-black hover:text-primary dark:text-white dark:hover:text-primary sm:inline-block"
@@ -236,12 +248,12 @@
               Sign In
             </a>
 
-            <a
+            <!-- <a
               href="signup.html"
               class="hidden rounded-md bg-primary py-[10px] px-[30px] text-base font-medium text-white hover:bg-opacity-90 sm:inline-block"
             >
               Sign Up
-            </a>
+            </a> -->
           </div>
         </div>
       </div>
@@ -257,7 +269,7 @@
             class="wow fadeInUp mx-auto w-full max-w-[520px] rounded-lg bg-[#F8FAFB] py-10 px-6 shadow-card dark:bg-[#15182A] dark:shadow-card-dark sm:p-[50px]"
             data-wow-delay=".2s"
           >
-            <div
+            <!-- <div
               class="mb-9 flex items-center space-x-3 rounded-md border border-stroke bg-white py-2 px-[10px] dark:border-stroke-dark dark:bg-dark"
             >
               <a
@@ -272,7 +284,7 @@
               >
                 Sign Up
               </a>
-            </div>
+            </div> -->
 
             <div class="text-center">
               <h3
@@ -284,7 +296,7 @@
                 Login to your account for a faster checkout.
               </p>
 
-              <button
+              <!-- <button
                 class="mb-6 flex w-full items-center justify-center rounded-md border border-stroke bg-white p-3 text-base font-medium text-body hover:text-primary dark:border-stroke-dark dark:bg-dark"
               >
                 <span class="mr-3">
@@ -321,7 +333,7 @@
                   </svg>
                 </span>
                 Sign in with Google
-              </button>
+              </button> -->
 
               <div
                 class="relative z-10 mb-[30px] flex items-center"
@@ -330,7 +342,7 @@
                   class="hidden h-[1px] w-full max-w-[70px] bg-stroke dark:bg-stroke-dark sm:block"
                 ></span>
                 <p class="w-full px-5 text-base text-body">
-                  Or, sign in with your email
+                  Or sign in with your e-mail
                 </p>
                 <span
                   class="hidden h-[1px] w-full max-w-[70px] bg-stroke dark:bg-stroke-dark sm:block"
@@ -434,9 +446,9 @@
 
     <!-- ======= Footer Start ======= -->
     <footer>
-      <div
+      <!-- <div
         class="bg-[#F8FAFB] pt-[95px] pb-[46px] dark:bg-[#15182A]"
-      >
+        >
         <div class="container max-w-[1390px]">
           <div class="-mx-4 flex flex-wrap">
             <div class="w-full px-4 lg:w-4/12 xl:w-5/12">
@@ -446,12 +458,12 @@
               >
                 <a href="index.html" class="mb-8 inline-block">
                   <img
-                    src="images/logo.svg"
+                    src="images/logo/logo.png"
                     alt="logo"
                     class="block max-w-full dark:hidden"
                   />
                   <img
-                    src="images/logo-white.svg"
+                    src="images/logo/logo.png"
                     alt="logo"
                     class="hidden max-w-full dark:block"
                   />
@@ -515,7 +527,7 @@
                 <div
                   class="w-full px-4 sm:w-1/2 md:w-3/12 lg:w-3/12"
                 >
-                  <div class="wow fadeInUp mb-11" data-wow-delay=".3s">
+                  <div class="wow fadeInUp mb-11" data-wow-delay=".2s">
                     <h3
                       class="mb-8 text-[22px] font-medium text-black dark:text-white"
                     >
@@ -656,7 +668,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div
         class="wow fadeInUp bg-primary py-7 dark:bg-black"
@@ -670,7 +682,7 @@
               <p
                 class="mt-4 text-center text-base text-white lg:mt-0 lg:text-left"
               >
-                &copy; 2025 Appline. All rights reserved
+                &copy; 2025 Curious. All rights reserved
               </p>
             </div>
 
@@ -796,7 +808,7 @@
                   Privacy Policy
                 </a>
                 <a href="javascript:void(0)" class="text-base text-white">
-                  Terms and conditions
+                  Terms & Conditions
                 </a>
               </div>
             </div>
