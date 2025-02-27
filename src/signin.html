@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign In | Appline Tailwind App Landing Template</title>
   </head>
-  <body class="bg-white dark:bg-black">
+  <!-- <body class="bg-white dark:bg-black">   -->
+  <body class="flex flex-col min-h-screen bg-white dark:bg-black">
+
     <!-- ======= Header Start ======= -->
     <header
       class="navbar absolute top-0 left-0 z-50 w-full border-stroke bg-white duration-300 dark:border-stroke-dark dark:bg-black"
@@ -261,9 +263,11 @@
     <!-- ======= Header End ======= -->
 
     <!-- ======= Main Start ======= -->
-    <main>
+    <!-- <main> --> 
+       <main class="flex-grow">
       <!-- ======= Sign in Start ======= -->
-      <section class="pt-[150px] pb-[110px] lg:pt-[220px]">
+      <!-- <section class="pt-[150px] pb-[110px] lg:pt-[220px]"> -->
+      <section class="pt-[200px] pb-[50px] lg:pt-[180px] lg:pb-[60px]">
         <div class="container overflow-hidden lg:max-w-[1250px]">
           <div
             class="wow fadeInUp mx-auto w-full max-w-[520px] rounded-lg bg-[#F8FAFB] py-10 px-6 shadow-card dark:bg-[#15182A] dark:shadow-card-dark sm:p-[50px]"
@@ -292,9 +296,11 @@
               >
                 Sign in to your account
               </h3>
-              <p class="mb-11 text-base text-body">
+              <br>
+              <br>
+              <!-- <p class="mb-11 text-base text-body">
                 Login to your account for a faster checkout.
-              </p>
+              </p> -->
 
               <!-- <button
                 class="mb-6 flex w-full items-center justify-center rounded-md border border-stroke bg-white p-3 text-base font-medium text-body hover:text-primary dark:border-stroke-dark dark:bg-dark"
@@ -335,7 +341,7 @@
                 Sign in with Google
               </button> -->
 
-              <div
+              <!-- <div
                 class="relative z-10 mb-[30px] flex items-center"
               >
                 <span
@@ -347,34 +353,34 @@
                 <span
                   class="hidden h-[1px] w-full max-w-[70px] bg-stroke dark:bg-stroke-dark sm:block"
                 ></span>
-              </div>
+              </div> -->
             </div>
 
             <form>
               <div class="mb-5">
-                <label
+                <!-- <label
                   for="email"
                   class="mb-[10px] block text-sm text-black dark:text-white"
                 >
                   Your Email
-                </label>
+                </label> -->
                 <input
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder="E-mail"
                   class="w-full rounded-md border border-stroke bg-white py-3 px-6 text-base font-medium text-body outline-none focus:border-primary focus:shadow-input dark:border-stroke-dark dark:bg-black dark:text-white dark:focus:border-primary"
                 />
               </div>
 
               <div class="mb-6">
-                <label
+                <!-- <label
                   for="password"
                   class="mb-[10px] block text-sm text-black dark:text-white"
                 >
                   Your password
-                </label>
+                </label> -->
                 <input
                   type="password"
-                  placeholder="Enter your password"
+                  placeholder="Password"
                   class="w-full rounded-md border border-stroke bg-white py-3 px-6 text-base font-medium text-body outline-none focus:border-primary focus:shadow-input dark:border-stroke-dark dark:bg-black dark:text-white dark:focus:border-primary"
                 />
               </div>
@@ -416,7 +422,7 @@
                         </defs>
                       </svg>
                     </span>
-                    Keep me signed in
+                    Remember me
                   </label>
                 </div>
 
