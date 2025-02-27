@@ -1166,6 +1166,9 @@ body{
 .h-\[22px\]{
   height: 22px;
 }
+.min-h-screen{
+  min-height: 100vh;
+}
 .w-full{
   width: 100%;
 }
@@ -1270,6 +1273,9 @@ body{
 }
 .max-w-\[22px\]{
   max-width: 22px;
+}
+.flex-grow{
+  flex-grow: 1;
 }
 .-translate-y-1\/2{
   --tw-translate-y: -50%;
@@ -1466,13 +1472,13 @@ body{
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%);
 }
 .bg-gradient-1{
-  background-image: linear-gradient(55.15deg, #9E4A1E -7.09%, #B95C24 51.72%, #D98E4A 101.48%);
+  background-image: linear-gradient(55.15deg, #D98E4A -7.09%, #B95C24 38.72%, #9E4A1E 80.48%);
 }
 .bg-texture{
   background-image: url(images/texture.svg);
 }
 .bg-gradient-2{
-  background-image: linear-gradient(120.12deg, #B95C24 0%, #E07930 100%);
+  background-image: linear-gradient(120.12deg, #E07930 0%, #B95C24 100%);
 }
 .bg-clip-text{
   -webkit-background-clip: text;
@@ -1679,6 +1685,9 @@ body{
 }
 .pb-\[50px\]{
   padding-bottom: 50px;
+}
+.pt-\[200px\]{
+  padding-top: 200px;
 }
 .text-left{
   text-align: left;
@@ -2367,6 +2376,14 @@ body{
 
   .lg\:pt-20{
     padding-top: 5rem;
+  }
+
+  .lg\:pt-\[180px\]{
+    padding-top: 180px;
+  }
+
+  .lg\:pb-\[60px\]{
+    padding-bottom: 60px;
   }
 
   .lg\:text-left{
