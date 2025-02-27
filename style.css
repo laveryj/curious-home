@@ -1668,6 +1668,9 @@ body{
 .pb-10{
   padding-bottom: 2.5rem;
 }
+.pt-\[10px\]{
+  padding-top: 10px;
+}
 .pt-20{
   padding-top: 5rem;
 }
