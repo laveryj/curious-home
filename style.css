@@ -906,9 +906,6 @@ body{
 .right-0{
   right: 0px;
 }
-.top-36{
-  top: 9rem;
-}
 .right-5{
   right: 1.25rem;
 }
@@ -935,6 +932,9 @@ body{
 }
 .-bottom-24{
   bottom: -6rem;
+}
+.top-36{
+  top: 9rem;
 }
 .-bottom-1\/2{
   bottom: -50%;
