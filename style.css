@@ -1635,6 +1635,9 @@ body{
 .pb-\[70px\]{
   padding-bottom: 70px;
 }
+.pt-\[110px\]{
+  padding-top: 110px;
+}
 .pt-\[165px\]{
   padding-top: 165px;
 }
@@ -1646,9 +1649,6 @@ body{
 }
 .pt-8{
   padding-top: 2rem;
-}
-.pt-\[110px\]{
-  padding-top: 110px;
 }
 .pt-14{
   padding-top: 3.5rem;
