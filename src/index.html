@@ -453,6 +453,9 @@
       </section>
       <!-- ======= Hero End ======= -->
 
+      <!-- features.html -->
+      <div id="features-container"></div>
+
       <!-- ======= Features Start ======= -->
       <section id="features" class="relative z-10 pt-[110px]">
         <div class="container">
@@ -466,7 +469,7 @@
               Packed with features to enhance every visit
             </h2>
             <p class="text-base text-body">
-              Curious is a next-generation digital interpretation platform specifically designed for zoos & aquariums. Transform how visitors explore, engage, and connect with your animals through a seamless, mobile-friendly experience -- no apps or downloads required.
+              Transform how visitors explore, engage, and connect with your animals through a seamless, mobile-friendly experience -- no apps or downloads required.
             </p>
           </div>
         </div>
@@ -3510,11 +3513,11 @@
             >
               Frequently Asked Questions
             </h2>
-            <p class="text-base text-body">
+            <!-- <p class="text-base text-body">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
               convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam
               ante in maximus.
-            </p>
+            </p> -->
           </div>
 
           <div
@@ -4036,10 +4039,10 @@
             <h2
               class="mb-4 text-3xl font-bold text-black dark:text-white sm:text-4xl md:text-[44px] md:leading-tight"
             >
-              Ready to Get Curious?
+              Still have questions?
             </h2>
             <p class="text-base text-body">
-              Ready to bring Curious to your zoo or aquarium? Get in touch below to schedule a demo or discuss your requirements. We’d love to partner with you!
+              E-mail us at hello@get-curio.us or get in touch below to schedule a demo, discuss your requirements, or just to chat!
 
 
             </p>
@@ -4095,7 +4098,7 @@
                       type="text"
                       name="phone"
                       id="phone"
-                      placeholder="Number (optional)"
+                      placeholder="Contact number (optional)"
                       class="w-full rounded border border-stroke bg-white py-4 px-[30px] text-base text-body outline-none focus:border-primary dark:border-[#34374A] dark:bg-[#2A2E44] dark:focus:border-primary"
                     />
                   </div>
@@ -4104,10 +4107,10 @@
                 <div class="w-full px-[22px]">
                   <div class="mb-8">
                     <textarea
-                      rows="6"
+                      rows="5"
                       name="message"
                       id="message"
-                      placeholder="Tell us about yourself"
+                      placeholder="Send us a message"
                       class="w-full rounded border border-stroke bg-white py-4 px-[30px] text-base text-body outline-none focus:border-primary dark:border-[#34374A] dark:bg-[#2A2E44] dark:focus:border-primary"
                     ></textarea>
                   </div>
@@ -4115,10 +4118,9 @@
 
                 <div class="w-full px-[22px]">
                   <div class="text-center">
-                    <p class="mb-5 text-center text-base text-body">
-                      By clicking contact us button, you agree our terms and
-                      policy,
-                    </p>
+                    <!-- <p class="mb-5 text-center text-base text-body">
+                      By clicking contact us button, you agree our terms and policy
+                    </p> -->
                     <button
                       type="submit"
                       class="inline-block rounded-md bg-primary py-[14px] px-11 text-base font-medium text-white hover:bg-opacity-90"
@@ -4372,7 +4374,7 @@
               class="order-last w-full px-3 lg:order-first lg:w-1/3"
             >
               <p
-                class="mt-4 text-center text-base text-white lg:mt-0 lg:text-left"
+                class="mt-4 text-center text-sm text-white lg:mt-0 lg:text-left"
               >
                 &copy; 2025 Curious. All rights reserved
               </p>
@@ -4382,7 +4384,7 @@
               <div
                 class="mb-4 flex items-center justify-center space-x-5 md:mb-0 md:justify-start lg:justify-center"
               >
-                <a
+                <!-- <a
                   href="javascript:void(0)"
                   class="text-white opacity-70 hover:opacity-100"
                   name="social icon"
@@ -4407,9 +4409,9 @@
                       </clipPath>
                     </defs>
                   </svg>
-                </a>
+                </a> -->
 
-                <a
+                <!-- <a
                   href="javascript:void(0)"
                   class="text-white opacity-70 hover:opacity-100"
                   name="social icon"
@@ -4434,10 +4436,10 @@
                       </clipPath>
                     </defs>
                   </svg>
-                </a>
+                </a> -->
 
                 <a
-                  href="javascript:void(0)"
+                  href="https://www.linkedin.com/company/curious-software"
                   class="text-white opacity-70 hover:opacity-100"
                   name="social icon"
                   aria-label="social icon"
@@ -4463,7 +4465,7 @@
                   </svg>
                 </a>
 
-                <a
+                <!-- <a
                   href="javascript:void(0)"
                   class="text-white opacity-70 hover:opacity-100"
                   name="social icon"
@@ -4488,7 +4490,7 @@
                       </clipPath>
                     </defs>
                   </svg>
-                </a>
+                </a> -->
               </div>
             </div>
 
@@ -4496,10 +4498,10 @@
               <div
                 class="flex items-center justify-center space-x-4 sm:space-x-8 md:justify-end lg:justify-end"
               >
-                <a href="javascript:void(0)" class="text-base text-white">
+                <a href="javascript:void(0)" class="text-sm text-white">
                   Privacy Policy
                 </a>
-                <a href="javascript:void(0)" class="text-base text-white">
+                <a href="javascript:void(0)" class="text-sm text-white">
                   Terms & Conditions
                 </a>
               </div>
@@ -4523,6 +4525,15 @@
 
     <!-- ======= JS Files ======= -->
     <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    fetch("./features.html")
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById("features-container").innerHTML = html;
+      })
+      .catch(error => console.error("Error loading features:", error));
+  });
+
       // ==== pricing plan toggler
       let togglePlan = document.querySelector("#togglePlan");
       const toggle = document.getElementById("togglePlan");
