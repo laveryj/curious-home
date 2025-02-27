@@ -1,0 +1,128 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = [
+    "features",
+    "footer",
+    "contact",
+    "pricing",
+    "header",
+    "hero",
+    "about-1",
+    "about-2",
+    "about-3",
+    "about-4",
+    "about-5",
+    "screenshots",
+    "testemonials",
+    "call-to-action",
+    "blog",
+    "clients",
+    "faq",
+    "how-it-works",
+  ];
+
+  sections.forEach((section) => {
+    fetch(`./section-${section}.html`)
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById(`${section}-container`).innerHTML = html;
+      })
+      .catch(error => console.error(`Error loading ${section}:`, error));
+  });
+});
+
+      // ==== pricing plan toggler
+      let togglePlan = document.querySelector("#togglePlan");
+      const toggle = document.getElementById("togglePlan");
+
+      document.querySelector(".monthly").addEventListener("click", () => {
+        togglePlan.checked = true;
+      });
+      document.querySelector(".yearly").addEventListener("click", () => {
+        togglePlan.checked = false;
+      });
+      toggle.addEventListener("change", function () {
+    document.querySelectorAll(".price-monthly, .monthly-label").forEach(el => el.classList.toggle("hidden"));
+    document.querySelectorAll(".price-annual, .annual-label").forEach(el => el.classList.toggle("hidden"));
+  });
+
+      // ==== for menu scroll
+      const pageLink = document.querySelectorAll(".menu-scroll");
+
+      pageLink.forEach((elem) => {
+        elem.addEventListener("click", (e) => {
+          e.preventDefault();
+          document.querySelector(elem.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+            offsetTop: 1 - 60,
+          });
+        });
+      });
+
+      // section menu active
+      function onScroll(event) {
+        const sections = document.querySelectorAll(".menu-scroll");
+        const scrollPos =
+          window.pageYOffset ||
+          document.documentElement.scrollTop ||
+          document.body.scrollTop;
+
+        for (let i = 0; i < sections.length; i++) {
+          const currLink = sections[i];
+          const val = currLink.getAttribute("href");
+          const refElement = document.querySelector(val);
+          const scrollTopMinus = scrollPos + 73;
+          if (
+            refElement.offsetTop <= scrollTopMinus &&
+            refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
+          ) {
+            document.querySelector(".menu-scroll").classList.remove("active");
+            currLink.classList.add("active");
+          } else {
+            currLink.classList.remove("active");
+          }
+        }
+      }
+
+      window.document.addEventListener("scroll", onScroll);
+
+      function initAcc(elem, option) {
+        document.addEventListener("click", function (e) {
+          if (!e.target.matches(elem + " .faq-btn")) return;
+          else {
+            if (!e.target.parentElement.classList.contains("active")) {
+              if (option == true) {
+                var elementList = document.querySelectorAll(elem + " .faq");
+                Array.prototype.forEach.call(elementList, function (e) {
+                  e.classList.remove("active");
+                });
+              }
+              e.target.parentElement.classList.add("active");
+            } else {
+              e.target.parentElement.classList.remove("active");
+            }
+          }
+        });
+      }
+
+      //activate accordion function
+      initAcc(".faqs", true);
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const backToTop = document.querySelector(".back-to-top");
+      
+        if (backToTop) {
+          // Scroll event to show/hide button
+          window.addEventListener("scroll", function () {
+            if (window.scrollY > 300) {
+              backToTop.classList.remove("hidden");
+            } else {
+              backToTop.classList.add("hidden");
+            }
+          });
+      
+          // Click event to scroll to top smoothly
+          backToTop.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+        }
+      });
