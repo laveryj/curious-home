@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "start": "webpack serve --open --config webpack.config.js",
-    "build": "webpack --config webpack.config.js",
-    "deploy": "npm run build && git add . && git commit -m 'Auto-commit: Build updated' && git push origin main"
-  },
+"scripts": {
+  "start": "webpack serve --open --config webpack.config.js",
+  "build": "node scripts/build-index.js && webpack --config webpack.config.js",
+  "deploy": "npm run build && git add . && git commit -m 'Auto-commit: Build updated' && git push origin main"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
