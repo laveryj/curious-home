@@ -1244,8 +1244,8 @@ body{
 .max-w-\[750px\]{
   max-width: 750px;
 }
-.max-w-\[600px\]{
-  max-width: 600px;
+.max-w-\[650px\]{
+  max-width: 650px;
 }
 .max-w-\[690px\]{
   max-width: 690px;
@@ -1650,14 +1650,14 @@ body{
 .pb-\[70px\]{
   padding-bottom: 70px;
 }
-.pt-\[110px\]{
-  padding-top: 110px;
-}
 .pb-6{
   padding-bottom: 1.5rem;
 }
 .pt-\[100px\]{
   padding-top: 100px;
+}
+.pt-\[110px\]{
+  padding-top: 110px;
 }
 .pt-14{
   padding-top: 3.5rem;
