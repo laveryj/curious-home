@@ -9,8 +9,8 @@ if (!fs.existsSync(buildDir)) {
   fs.mkdirSync(buildDir, { recursive: true });
 }
 
-// Read index.html from src
-const indexPath = path.join(srcDir, "index.html");
+// Read index-dev.html from src
+const indexPath = path.join(srcDir, "index-dev.html");
 let indexHtml = fs.readFileSync(indexPath, "utf-8");
 
 // Find and replace partials
@@ -27,15 +27,15 @@ indexHtml = indexHtml.replace(partialRegex, (match, section) => {
   }
 });
 
-// Save modified index.html to build directory
-// const buildIndexPath = path.join(buildDir, "index.html");
+// Save modified index-dev.html to build directory
+// const buildIndexPath = path.join(buildDir, "index-dev.html");
 // fs.writeFileSync(buildIndexPath, indexHtml);
-// console.log("✅ Build complete: index.html generated in build/");
+// console.log("✅ Build complete: index-dev.html generated in build/");
 
 // Save a copy to src/index-live.html
-const liveIndexPath = path.join(srcDir, "index-live.html");
+const liveIndexPath = path.join(srcDir, "index.html");
 fs.writeFileSync(liveIndexPath, indexHtml);
-console.log("✅ Live version saved: index-live.html generated in src/");
+console.log("✅ Live version saved: index.html generated in src/");
 
 // Function to copy static assets
 function copyAssets(src, dest) {

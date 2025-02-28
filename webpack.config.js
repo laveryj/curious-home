@@ -29,8 +29,8 @@ const generateHTMLPlugins = () => glob.sync('./src/*.html').map((dir) => {
   return new HtmlWebpackPlugin({
     filename,
     template: `./src/${filename}`,
-    favicon: false, // Prevents favicon injection
-    inject: false,  // Prevents automatic <link> and <script> injections
+    favicon: `./src/images/favicon.ico`,
+    inject: 'body',
   });
 });
 
@@ -39,7 +39,7 @@ module.exports = {
   entry: './src/js/index.js',
   devServer: {
     static: {
-      directory: path.join(__dirname, './src'),
+      directory: path.join(__dirname, './build'),
     },
     compress: true,
     port: 3000,
