@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-  var sections = ["features", "footer", "contact", "pricing", "header", "hero", "about-1", "about-2", "about-3", "about-4", "about-5", "screenshots", "testemonials", "call-to-action", "blog", "clients", "faq", "how-it-works"];
+  var sections = ["features", "footer", "contact", "pricing", "header", "hero", "about1", "about2", "about3", "about4", "about5", "screenshots", "testemonials", "callToAction", "blog", "clients", "faq", "howItWorks"];
   sections.forEach(function (section) {
-    fetch("./section-".concat(section, ".html")).then(function (response) {
+    fetch("../partials/section-".concat(section, ".html")).then(function (response) {
       return response.text();
     }).then(function (html) {
-      document.getElementById("".concat(section, "-container")).innerHTML = html;
+      document.getElementById("import-partial-".concat(section)).innerHTML = html;
     })["catch"](function (error) {
       return console.error("Error loading ".concat(section, ":"), error);
     });

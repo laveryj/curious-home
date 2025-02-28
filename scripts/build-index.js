@@ -14,13 +14,13 @@ const indexPath = path.join(srcDir, "index.html");
 let indexHtml = fs.readFileSync(indexPath, "utf-8");
 
 // Find and replace partials
-const partialRegex = /<div id="([a-zA-Z0-9-]+)-container"><\/div>/g;
+const partialRegex = /<div id="import-partial-([a-zA-Z0-9-]+)"><\/div>/g;
 indexHtml = indexHtml.replace(partialRegex, (match, section) => {
-  const partialPath = path.join(srcDir, `section-${section}.html`);
+  const partialPath = path.join(srcDir, `partials/section-${section}.html`);
 
   if (fs.existsSync(partialPath)) {
     console.log(`Injecting ${partialPath}...`);
-    return fs.readFileSync(partialPath, "utf-8").replace(/<partial.*?>|<\/partial>/g, "");
+    return fs.readFileSync(partialPath, "utf-8");
   } else {
     console.warn(`Warning: ${partialPath} not found. Keeping placeholder.`);
     return match; // Keep placeholder if partial is missing
@@ -28,9 +28,9 @@ indexHtml = indexHtml.replace(partialRegex, (match, section) => {
 });
 
 // Save modified index.html to build directory
-const buildIndexPath = path.join(buildDir, "index.html");
-fs.writeFileSync(buildIndexPath, indexHtml);
-console.log("✅ Build complete: index.html generated in build/");
+// const buildIndexPath = path.join(buildDir, "index.html");
+// fs.writeFileSync(buildIndexPath, indexHtml);
+// console.log("✅ Build complete: index.html generated in build/");
 
 // Save a copy to src/index-live.html
 const liveIndexPath = path.join(srcDir, "index-live.html");

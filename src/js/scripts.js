@@ -6,25 +6,25 @@ document.addEventListener("DOMContentLoaded", function () {
     "pricing",
     "header",
     "hero",
-    "about-1",
-    "about-2",
-    "about-3",
-    "about-4",
-    "about-5",
+    "about1",
+    "about2",
+    "about3",
+    "about4",
+    "about5",
     "screenshots",
     "testemonials",
-    "call-to-action",
+    "callToAction",
     "blog",
     "clients",
     "faq",
-    "how-it-works",
+    "howItWorks",
   ];
 
   sections.forEach((section) => {
-    fetch(`./section-${section}.html`)
+    fetch(`../partials/section-${section}.html`)
       .then(response => response.text())
       .then(html => {
-        document.getElementById(`${section}-container`).innerHTML = html;
+        document.getElementById(`import-partial-${section}`).innerHTML = html;
       })
       .catch(error => console.error(`Error loading ${section}:`, error));
   });
