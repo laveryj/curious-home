@@ -5,7 +5,7 @@
   "main": "index.js",
 "scripts": {
   "start": "webpack serve --open --config webpack.config.js",
-  "build": "node scripts/build-index.js && webpack --config webpack.config.js",
+  "build": "node scripts/build-index.js && webpack --config webpack.config.js && cp src/index-live.html build/index.html",
   "deploy": "npm run build && git add . && git commit -m 'Auto-commit: Build updated' && git push origin main"
 },
   "keywords": [],

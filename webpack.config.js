@@ -28,7 +28,8 @@ const generateHTMLPlugins = () => glob.sync('./src/*.html').map((dir) => {
 
   return new HtmlWebpackPlugin({
     filename,
-    template: `./build/${filename}`,
+    // template: `./src/${filename}`,
+    template: filename === "index.html" ? "./src/index-live.html" : `./src/${filename}`,
     favicon: `./src/images/favicon.ico`,
     inject: 'body',
   });
