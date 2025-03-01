@@ -2443,6 +2443,14 @@ body{
     padding-bottom: 60px;
   }
 
+  .lg\:pt-\[120px\]{
+    padding-top: 120px;
+  }
+
+  .lg\:pb-\[50px\]{
+    padding-bottom: 50px;
+  }
+
   .lg\:text-left{
     text-align: left;
   }
