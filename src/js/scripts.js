@@ -104,25 +104,35 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
 
-      //activate accordion function
-      initAcc(".faqs", true);
-
       document.addEventListener("DOMContentLoaded", function () {
-        const backToTop = document.querySelector(".back-to-top");
-      
-        if (backToTop) {
-          // Scroll event to show/hide button
-          window.addEventListener("scroll", function () {
-            if (window.scrollY > 300) {
-              backToTop.classList.remove("hidden");
-            } else {
-              backToTop.classList.add("hidden");
-            }
-          });
-      
-          // Click event to scroll to top smoothly
-          backToTop.addEventListener("click", function () {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          });
-        }
-      });
+        const faqs = document.querySelectorAll(".faq-btn");
+    
+        faqs.forEach((btn) => {
+            btn.addEventListener("click", function () {
+                // Find the corresponding content div
+                const content = this.nextElementSibling;
+    
+                // Toggle active class
+                this.classList.toggle("active");
+    
+                // Expand or collapse the content
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    content.style.paddingTop = "0"; // Optional: Adjust spacing
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    content.style.paddingTop = "10px"; // Optional: Adjust spacing
+                }
+    
+                // Close other open FAQs (optional)
+                faqs.forEach((otherBtn) => {
+                    if (otherBtn !== btn) {
+                        const otherContent = otherBtn.nextElementSibling;
+                        otherBtn.classList.remove("active");
+                        otherContent.style.maxHeight = null;
+                        otherContent.style.paddingTop = "0";
+                    }
+                });
+            });
+        });
+    });
