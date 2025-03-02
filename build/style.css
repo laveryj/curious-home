@@ -2429,6 +2429,11 @@ body{
     padding-right: 1.75rem;
   }
 
+  .lg\:py-1{
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
   .lg\:pb-5{
     padding-bottom: 1.25rem;
   }
