@@ -59,51 +59,22 @@ function onScroll(event) {
   }
 }
 window.document.addEventListener("scroll", onScroll);
-function initAcc(elem, option) {
-  document.addEventListener("click", function (e) {
-    if (!e.target.matches(elem + " .faq-btn")) return;else {
-      if (!e.target.parentElement.classList.contains("active")) {
-        if (option == true) {
-          var elementList = document.querySelectorAll(elem + " .faq");
-          Array.prototype.forEach.call(elementList, function (e) {
-            e.classList.remove("active");
-          });
-        }
-        e.target.parentElement.classList.add("active");
-      } else {
-        e.target.parentElement.classList.remove("active");
-      }
-    }
-  });
-}
 document.addEventListener("DOMContentLoaded", function () {
-  var faqs = document.querySelectorAll(".faq-btn");
-  faqs.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      // Find the corresponding content div
+  var faqButtons = document.querySelectorAll(".faq-btn");
+  faqButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
       var content = this.nextElementSibling;
+      var icon = this.querySelector(".faq-icon");
 
-      // Toggle active class
-      this.classList.toggle("active");
+      // Toggle the FAQ content
+      content.classList.toggle("hidden");
 
-      // Expand or collapse the content
-      if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-        content.style.paddingTop = "0"; // Optional: Adjust spacing
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-        content.style.paddingTop = "10px"; // Optional: Adjust spacing
-      }
+      // Toggle icon between + and -
+      icon.textContent = content.classList.contains("hidden") ? "+" : "−";
 
-      // Close other open FAQs (optional)
-      faqs.forEach(function (otherBtn) {
-        if (otherBtn !== btn) {
-          var otherContent = otherBtn.nextElementSibling;
-          otherBtn.classList.remove("active");
-          otherContent.style.maxHeight = null;
-          otherContent.style.paddingTop = "0";
-        }
-      });
+      // Set aria-expanded for accessibility
+      var isExpanded = content.classList.contains("hidden") ? "false" : "true";
+      this.setAttribute("aria-expanded", isExpanded);
     });
   });
 });
