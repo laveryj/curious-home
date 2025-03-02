@@ -1116,9 +1116,6 @@ body{
 .hidden{
   display: none;
 }
-.\!hidden{
-  display: none !important;
-}
 .aspect-square{
   aspect-ratio: 1 / 1;
 }
