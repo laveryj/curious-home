@@ -1116,6 +1116,9 @@ body{
 .hidden{
   display: none;
 }
+.\!hidden{
+  display: none !important;
+}
 .aspect-square{
   aspect-ratio: 1 / 1;
 }
@@ -1831,6 +1834,14 @@ body{
   font-size: 18px;
   color: #ffffff; /* Change color as needed */
   margin-top: 6px; /* Space between image and text */
+}
+
+.faq-content {
+  display: none;
+}
+
+.faq-content.open {
+  display: block;
 }
 
 .last-of-type\:border-none:last-of-type{

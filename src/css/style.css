@@ -77,3 +77,11 @@
   color: #ffffff; /* Change color as needed */
   margin-top: 6px; /* Space between image and text */
 }
+
+.faq-content {
+  display: none;
+}
+
+.faq-content.open {
+  display: block;
+}

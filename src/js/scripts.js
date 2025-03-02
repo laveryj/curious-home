@@ -30,20 +30,22 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-      // ==== pricing plan toggler
-      let togglePlan = document.querySelector("#togglePlan");
-      const toggle = document.getElementById("togglePlan");
+// ==== pricing plan toggler
+let togglePlan = document.querySelector("#togglePlan");
+const toggle = document.getElementById("togglePlan");
 
       document.querySelector(".monthly").addEventListener("click", () => {
         togglePlan.checked = true;
       });
+      
       document.querySelector(".yearly").addEventListener("click", () => {
         togglePlan.checked = false;
       });
+
       toggle.addEventListener("change", function () {
-    document.querySelectorAll(".price-monthly, .monthly-label").forEach(el => el.classList.toggle("hidden"));
-    document.querySelectorAll(".price-annual, .annual-label").forEach(el => el.classList.toggle("hidden"));
-  });
+        document.querySelectorAll(".price-monthly, .monthly-label").forEach(el => el.classList.toggle("hidden"));
+        document.querySelectorAll(".price-annual, .annual-label").forEach(el => el.classList.toggle("hidden"));
+      });
 
       // ==== for menu scroll
       const pageLink = document.querySelectorAll(".menu-scroll");
@@ -85,54 +87,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
       window.document.addEventListener("scroll", onScroll);
 
-      function initAcc(elem, option) {
-        document.addEventListener("click", function (e) {
-          if (!e.target.matches(elem + " .faq-btn")) return;
-          else {
-            if (!e.target.parentElement.classList.contains("active")) {
-              if (option == true) {
-                var elementList = document.querySelectorAll(elem + " .faq");
-                Array.prototype.forEach.call(elementList, function (e) {
-                  e.classList.remove("active");
-                });
-              }
-              e.target.parentElement.classList.add("active");
-            } else {
-              e.target.parentElement.classList.remove("active");
-            }
-          }
-        });
-      }
-
       document.addEventListener("DOMContentLoaded", function () {
-        const faqs = document.querySelectorAll(".faq-btn");
-    
-        faqs.forEach((btn) => {
-            btn.addEventListener("click", function () {
-                // Find the corresponding content div
-                const content = this.nextElementSibling;
-    
-                // Toggle active class
-                this.classList.toggle("active");
-    
-                // Expand or collapse the content
-                if (content.style.maxHeight) {
-                    content.style.maxHeight = null;
-                    content.style.paddingTop = "0"; // Optional: Adjust spacing
-                } else {
-                    content.style.maxHeight = content.scrollHeight + "px";
-                    content.style.paddingTop = "10px"; // Optional: Adjust spacing
-                }
-    
-                // Close other open FAQs (optional)
-                faqs.forEach((otherBtn) => {
-                    if (otherBtn !== btn) {
-                        const otherContent = otherBtn.nextElementSibling;
-                        otherBtn.classList.remove("active");
-                        otherContent.style.maxHeight = null;
-                        otherContent.style.paddingTop = "0";
-                    }
-                });
-            });
+        const faqButtons = document.querySelectorAll(".faq-btn");
+      
+        faqButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const content = this.nextElementSibling;
+            const icon = this.querySelector(".faq-icon");
+      
+            // Toggle the FAQ content
+            content.classList.toggle("hidden");
+      
+            // Toggle icon between + and -
+            icon.textContent = content.classList.contains("hidden") ? "+" : "−";
+      
+            // Set aria-expanded for accessibility
+            const isExpanded = content.classList.contains("hidden") ? "false" : "true";
+            this.setAttribute("aria-expanded", isExpanded);
+          });
         });
-    });
+      });
