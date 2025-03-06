@@ -1,0 +1,38 @@
+name: Deploy Build to Another Repo
+
+on:
+  push:
+    branches:
+      - main  # Adjust if using a different branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Repository
+        uses: actions/checkout@v4
+
+      - name: Set Up Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions@users.noreply.github.com"
+
+      - name: Clone Destination Repository
+        run: |
+          git clone https://x-access-token:${{ secrets.DEST_REPO_PAT }}@github.com/laveryj/curious.git dest-repo
+          cd dest-repo
+          git checkout main  # Ensure we're on the main branch
+
+      - name: Copy Build Files
+        run: |
+          rm -rf dest-repo/*  # Clear previous contents
+          cp -r build/* dest-repo/
+          cd dest-repo
+
+      - name: Commit and Push Changes
+        run: |
+          cd dest-repo
+          git add .
+          git commit -m "Auto-deploy from curious-home"
+          git push origin main
