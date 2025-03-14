@@ -1200,6 +1200,9 @@ body{
 .w-\[400px\]{
   width: 400px;
 }
+.w-24{
+  width: 6rem;
+}
 .w-\[22px\]{
   width: 22px;
 }
@@ -1477,6 +1480,9 @@ body{
   --tw-bg-opacity: 1;
   background-color: rgb(235 239 244 / var(--tw-bg-opacity));
 }
+.bg-secondary{
+  background-color: ;
+}
 .bg-opacity-95{
   --tw-bg-opacity: 0.95;
 }
@@ -1729,25 +1735,21 @@ body{
 .text-\[22px\]{
   font-size: 22px;
 }
-.text-xl{
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
+.text-xl{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
 .text-lg{
   font-size: 1.125rem;
   line-height: 1.75rem;
-}
-.text-3xl{
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-.text-2xl{
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 .text-xs{
   font-size: 0.75rem;
@@ -1755,6 +1757,10 @@ body{
 }
 .text-\[40px\]{
   font-size: 40px;
+}
+.text-2xl{
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 .font-bold{
   font-weight: 700;
@@ -1807,6 +1813,11 @@ body{
 .shadow-card{
   --tw-shadow: 0px 1px 5px rgba(45, 74, 170, 0.14);
   --tw-shadow-colored: 0px 1px 5px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-sm{
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 .outline-none{
@@ -1892,6 +1903,21 @@ body{
   --tw-shadow: 0px 10px 30px rgba(74, 108, 247, 0.08);
   --tw-shadow-colored: 0px 10px 30px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.focus\:outline-none:focus{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus\:ring-2:focus{
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.focus\:ring-offset-2:focus{
+  --tw-ring-offset-width: 2px;
 }
 
 .group:hover .group-hover\:bg-primary{
@@ -2133,6 +2159,11 @@ body{
     line-height: 2.5rem;
   }
 
+  .sm\:text-sm{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
   .sm\:text-\[28px\]{
     font-size: 28px;
   }
@@ -2213,10 +2244,6 @@ body{
 
   .md\:text-\[22px\]{
     font-size: 22px;
-  }
-
-  .md\:text-\[24px\]{
-    font-size: 24px;
   }
 
   .md\:text-\[38px\]{
@@ -2619,10 +2646,6 @@ body{
 
   .xl\:text-\[26px\]{
     font-size: 26px;
-  }
-
-  .xl\:text-\[40px\]{
-    font-size: 40px;
   }
 
   .xl\:text-\[36px\]{
