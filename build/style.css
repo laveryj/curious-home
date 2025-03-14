@@ -1477,9 +1477,6 @@ body{
   --tw-bg-opacity: 1;
   background-color: rgb(235 239 244 / var(--tw-bg-opacity));
 }
-.bg-secondary{
-  background-color: ;
-}
 .bg-opacity-95{
   --tw-bg-opacity: 0.95;
 }
@@ -1732,21 +1729,25 @@ body{
 .text-\[22px\]{
   font-size: 22px;
 }
-.text-3xl{
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.text-xl{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
-.text-xl{
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
 .text-lg{
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.text-2xl{
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 .text-xs{
   font-size: 0.75rem;
@@ -1754,10 +1755,6 @@ body{
 }
 .text-\[40px\]{
   font-size: 40px;
-}
-.text-2xl{
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 .font-bold{
   font-weight: 700;
@@ -2218,6 +2215,10 @@ body{
     font-size: 22px;
   }
 
+  .md\:text-\[24px\]{
+    font-size: 24px;
+  }
+
   .md\:text-\[38px\]{
     font-size: 38px;
   }
@@ -2618,6 +2619,10 @@ body{
 
   .xl\:text-\[26px\]{
     font-size: 26px;
+  }
+
+  .xl\:text-\[40px\]{
+    font-size: 40px;
   }
 
   .xl\:text-\[36px\]{

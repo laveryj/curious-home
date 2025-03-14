@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
     "faq",
     "howItWorks",
     "views",
-    "calculator",
   ];
 
   sections.forEach((section) => {
