@@ -1,4 +1,4 @@
-name: Push index.html to live Curious home page
+name: Push index.html to Curious
 on:
   push:
     paths:
@@ -11,10 +11,13 @@ jobs:
         with:
           repository: laveryj/curious
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-      - run: cp <path-to-curious-home>/build/index.html .
+      - uses: actions/checkout@v3
+        with:
+          path: curious-home
+      - run: cp curious-home/build/index.html .
       - run: |
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
           git add index.html
-          git commit -m "Update index.html from curious-home"
+          git commit -m "Copied index.html from curious-home to curious"
           git push
